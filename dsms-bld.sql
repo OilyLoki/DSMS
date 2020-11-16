@@ -49,7 +49,7 @@ CREATE TABLE Participant
 
 CREATE TABLE Relations
 (
-    relationship  VARCHAR(10),
+    relationship  VARCHAR(15),
     participantID CHAR(5),
     guardianID    CHAR(5),
     PRIMARY KEY (participantID, guardianID),
