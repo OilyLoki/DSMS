@@ -22,10 +22,12 @@ class Main {
         // JFrame creation/settings
         JFrame frame = new JFrame("DSMS");
         frame.setContentPane(app.getMainPanel());
+        frame.setJMenuBar(app.getMenuBar());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
-        frame.setSize(500, 100);
+        frame.setSize(500, 200);
         frame.setLocation(200, 200);
+
     }
 }
