@@ -5,6 +5,7 @@ import javax.swing.*;
 class Main {
     public static void main(String[] args) throws InterruptedException {
         // Setting look and feel
+        /*
         try {
             for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -13,7 +14,7 @@ class Main {
                 }
             }
         } catch (UnsupportedLookAndFeelException | InstantiationException | ClassNotFoundException | IllegalAccessException ignored) {
-        }
+        }*/
 
         Application app = new Application();    // New application instance
 
