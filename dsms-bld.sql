@@ -85,7 +85,7 @@ CREATE TABLE Behaviour
 
 CREATE TABLE Category
 (
-    categoryID CHAR(1),
+    categoryID CHAR(2),
     name       VARCHAR(20),
     descr      VARCHAR(20),
     PRIMARY KEY (categoryID)
@@ -93,7 +93,7 @@ CREATE TABLE Category
 
 CREATE TABLE Subcat
 (
-    subID      CHAR(1),
+    subID      CHAR(2),
     name       VARCHAR(20),
     descr      VARCHAR(20),
     categoryID CHAR(1),
