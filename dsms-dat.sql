@@ -58,10 +58,10 @@ INSERT INTO Relations VALUES ("Mother", "49415", "09221");
 INSERT INTO Relations VALUES ("Father", "55297", "14096");
 INSERT INTO Relations VALUES ("Father", "71558", "14096");
 
-INSERT INTO Category VALUES ("PH", "Physical", "Physical harm");
-INSERT INTO Category VALUES ("PD", "Property Destruction", "Destroying property");
-INSERT INTO Category VALUES ("SE", "Sexual", "Sexual actions");
-INSERT INTO Category VALUES ("VE", "Verbal", "Verbal actions");
+INSERT INTO Category VALUES ("PH", "Physical", "Physical harm to self or others");
+INSERT INTO Category VALUES ("PD", "Property Destruction", "Destroying property (Public or Private)");
+INSERT INTO Category VALUES ("SE", "Sexual", "Sexualised behaviours");
+INSERT INTO Category VALUES ("VE", "Verbal", "Verbal behaviours");
 
 INSERT INTO Subcat VALUES ("HS", "Harm to self", "", "PH");
 INSERT INTO Subcat VALUES ("HO", "Harm to others", "", "PH");
