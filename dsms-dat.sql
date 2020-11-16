@@ -38,6 +38,26 @@ INSERT INTO Guardian VALUES ("22420", "SCOTT", "DOROTHY", "61 524 848 322", "dor
 INSERT INTO Guardian VALUES ("14096", "GREEN", "STEVEN", "61 921 804 377", "stevengreen@gmail.com");
 INSERT INTO Guardian VALUES ("30093", "ADAMS", "KIMBERLY", "61 251 913 697", "kimberlyadams@gmail.com");
 
+INSERT INTO Relations VALUES ("Mother", "47582", "37205");
+INSERT INTO Relations VALUES ("Father", "47582", "61132");
+INSERT INTO Relations VALUES ("Mother", "40445", "82349");
+INSERT INTO Relations VALUES ("Caregiver", "40445", "02286");
+INSERT INTO Relations VALUES ("Mother", "95571", "02572");
+INSERT INTO Relations VALUES ("Father", "95571", "13263");
+INSERT INTO Relations VALUES ("Mother", "96923", "85880");
+INSERT INTO Relations VALUES ("Caregiver", "40836", "13263");
+INSERT INTO Relations VALUES ("Grandparent", "69652", "87887");
+INSERT INTO Relations VALUES ("Mother", "69652", "96570");
+INSERT INTO Relations VALUES ("Father", "17481", "32687");
+INSERT INTO Relations VALUES ("Grandparent", "24210", "77999");
+INSERT INTO Relations VALUES ("Father", "80413", "67871");
+INSERT INTO Relations VALUES ("Mother", "80413", "21707");
+INSERT INTO Relations VALUES ("Caregiver", "47292", "69170");
+INSERT INTO Relations VALUES ("Mother", "49415", "09221");
+INSERT INTO Relations VALUES ("Mother", "49415", "09221");
+INSERT INTO Relations VALUES ("Father", "55297", "14096");
+INSERT INTO Relations VALUES ("Father", "71558", "14096");
+
 INSERT INTO Category VALUES ("PH", "Physical", "Physical harm");
 INSERT INTO Category VALUES ("PD", "Property Destruction", "Destroying property");
 INSERT INTO Category VALUES ("SE", "Sexual", "Sexual actions");
