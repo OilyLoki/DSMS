@@ -87,7 +87,7 @@ CREATE TABLE Category
 (
     categoryID CHAR(2),
     name       VARCHAR(20),
-    descr      VARCHAR(20),
+    descr      VARCHAR(50),
     PRIMARY KEY (categoryID)
 );
 
@@ -95,7 +95,7 @@ CREATE TABLE Subcat
 (
     subID      CHAR(2),
     name       VARCHAR(20),
-    descr      VARCHAR(20),
+    descr      VARCHAR(50),
     categoryID CHAR(1),
     PRIMARY KEY (subID),
     FOREIGN KEY (categoryID) REFERENCES Category (categoryID)
