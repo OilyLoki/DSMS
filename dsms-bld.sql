@@ -23,17 +23,6 @@ CREATE TABLE Staff
     PRIMARY KEY (staffID)
 );
 
-CREATE TABLE Appointment
-(
-    dateTime      DATETIME,
-    staffID       CHAR(5),
-    participantID CHAR(5),
-    PRIMARY KEY (dateTime, staffID, participantID),
-    FOREIGN KEY (staffID) REFERENCES Staff (staffID),
-    FOREIGN KEY (participantID) REFERENCES Participant (participantID)
-);
-
-
 CREATE TABLE Participant
 (
     participantID    CHAR(5),
@@ -47,14 +36,16 @@ CREATE TABLE Participant
     FOREIGN KEY (preferredSupport) REFERENCES Staff (staffID)
 );
 
-CREATE TABLE Relations
+
+CREATE TABLE Appointment
 (
-    relationship  VARCHAR(15),
+    dateTime      DATETIME,
+    duration      SMALLINT,
+    staffID       CHAR(5),
     participantID CHAR(5),
-    guardianID    CHAR(5),
-    PRIMARY KEY (participantID, guardianID),
-    FOREIGN KEY (participantID) REFERENCES Participant (participantID),
-    FOREIGN KEY (guardianID) REFERENCES Guardian (guardianID)
+    PRIMARY KEY (dateTime, staffID, participantID),
+    FOREIGN KEY (staffID) REFERENCES Staff (staffID),
+    FOREIGN KEY (participantID) REFERENCES Participant (participantID)
 );
 
 CREATE TABLE Guardian
@@ -67,20 +58,14 @@ CREATE TABLE Guardian
     PRIMARY KEY (guardianID)
 );
 
-CREATE TABLE Behaviour
+CREATE TABLE Relations
 (
-    behaviourID   CHAR(9),
-    time          TIME,
-    duration      SMALLINT,
-    severity      TINYINT,
-    location      VARCHAR(20),
+    relationship  VARCHAR(15),
     participantID CHAR(5),
-    categoryID    CHAR(1),
-    subID         CHAR(1),
-    PRIMARY KEY (behaviourID),
+    guardianID    CHAR(5),
+    PRIMARY KEY (participantID, guardianID),
     FOREIGN KEY (participantID) REFERENCES Participant (participantID),
-    FOREIGN KEY (categoryID) REFERENCES Category (categoryID),
-    FOREIGN KEY (subID) REFERENCES SubCat (subID)
+    FOREIGN KEY (guardianID) REFERENCES Guardian (guardianID)
 );
 
 CREATE TABLE Category
@@ -96,7 +81,23 @@ CREATE TABLE Subcat
     subID      CHAR(2),
     name       VARCHAR(20),
     descr      VARCHAR(50),
-    categoryID CHAR(1),
+    categoryID CHAR(2),
     PRIMARY KEY (subID),
     FOREIGN KEY (categoryID) REFERENCES Category (categoryID)
+);
+
+CREATE TABLE Behaviour
+(
+    behaviourID   CHAR(9),
+    time          TIME,
+    duration      SMALLINT,
+    severity      TINYINT,
+    location      VARCHAR(20),
+    participantID CHAR(5),
+    categoryID    CHAR(2),
+    subID         CHAR(2),
+    PRIMARY KEY (behaviourID),
+    FOREIGN KEY (participantID) REFERENCES Participant (participantID),
+    FOREIGN KEY (categoryID) REFERENCES Category (categoryID),
+    FOREIGN KEY (subID) REFERENCES SubCat (subID)
 );

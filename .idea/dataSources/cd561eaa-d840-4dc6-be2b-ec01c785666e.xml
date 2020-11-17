@@ -922,288 +922,292 @@ SELECT|sys.sys_config:null
       <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="293" parent="284" name="staffID">
+    <column id="293" parent="284" name="duration">
       <Position>2</Position>
-      <DataType>char(5)|0s</DataType>
-      <NotNull>1</NotNull>
+      <DataType>smallint|0s</DataType>
     </column>
-    <column id="294" parent="284" name="participantID">
+    <column id="294" parent="284" name="staffID">
       <Position>3</Position>
       <DataType>char(5)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="295" parent="284" name="staffID">
+    <column id="295" parent="284" name="participantID">
+      <Position>4</Position>
+      <DataType>char(5)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="296" parent="284" name="staffID">
       <ColNames>staffID</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="296" parent="284" name="participantID">
+    <index id="297" parent="284" name="participantID">
       <ColNames>participantID</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="297" parent="284" name="PRIMARY">
+    <key id="298" parent="284" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>dateTime
 staffID
 participantID</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="298" parent="284" name="appointment_ibfk_1">
+    <foreign-key id="299" parent="284" name="appointment_ibfk_1">
       <ColNames>staffID</ColNames>
       <RefTableName>staff</RefTableName>
       <RefColNames>staffID</RefColNames>
     </foreign-key>
-    <foreign-key id="299" parent="284" name="appointment_ibfk_2">
+    <foreign-key id="300" parent="284" name="appointment_ibfk_2">
       <ColNames>participantID</ColNames>
       <RefTableName>participant</RefTableName>
       <RefColNames>participantID</RefColNames>
     </foreign-key>
-    <column id="300" parent="285" name="behaviourID">
+    <column id="301" parent="285" name="behaviourID">
       <Position>1</Position>
       <DataType>char(9)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="301" parent="285" name="time">
+    <column id="302" parent="285" name="time">
       <Position>2</Position>
       <DataType>time|0s</DataType>
     </column>
-    <column id="302" parent="285" name="duration">
+    <column id="303" parent="285" name="duration">
       <Position>3</Position>
       <DataType>smallint|0s</DataType>
     </column>
-    <column id="303" parent="285" name="severity">
+    <column id="304" parent="285" name="severity">
       <Position>4</Position>
       <DataType>tinyint|0s</DataType>
     </column>
-    <column id="304" parent="285" name="location">
+    <column id="305" parent="285" name="location">
       <Position>5</Position>
       <DataType>varchar(20)|0s</DataType>
     </column>
-    <column id="305" parent="285" name="participantID">
+    <column id="306" parent="285" name="participantID">
       <Position>6</Position>
       <DataType>char(5)|0s</DataType>
     </column>
-    <column id="306" parent="285" name="categoryID">
+    <column id="307" parent="285" name="categoryID">
       <Position>7</Position>
-      <DataType>char(1)|0s</DataType>
+      <DataType>char(2)|0s</DataType>
     </column>
-    <column id="307" parent="285" name="subID">
+    <column id="308" parent="285" name="subID">
       <Position>8</Position>
-      <DataType>char(1)|0s</DataType>
+      <DataType>char(2)|0s</DataType>
     </column>
-    <index id="308" parent="285" name="participantID">
+    <index id="309" parent="285" name="participantID">
       <ColNames>participantID</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="309" parent="285" name="categoryID">
+    <index id="310" parent="285" name="categoryID">
       <ColNames>categoryID</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="310" parent="285" name="subID">
+    <index id="311" parent="285" name="subID">
       <ColNames>subID</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="311" parent="285" name="PRIMARY">
+    <key id="312" parent="285" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>behaviourID</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="312" parent="285" name="behaviour_ibfk_1">
+    <foreign-key id="313" parent="285" name="behaviour_ibfk_1">
       <ColNames>participantID</ColNames>
       <RefTableName>participant</RefTableName>
       <RefColNames>participantID</RefColNames>
     </foreign-key>
-    <foreign-key id="313" parent="285" name="behaviour_ibfk_2">
+    <foreign-key id="314" parent="285" name="behaviour_ibfk_2">
       <ColNames>categoryID</ColNames>
       <RefTableName>category</RefTableName>
       <RefColNames>categoryID</RefColNames>
     </foreign-key>
-    <foreign-key id="314" parent="285" name="behaviour_ibfk_3">
+    <foreign-key id="315" parent="285" name="behaviour_ibfk_3">
       <ColNames>subID</ColNames>
       <RefTableName>subcat</RefTableName>
       <RefColNames>subID</RefColNames>
     </foreign-key>
-    <column id="315" parent="286" name="categoryID">
+    <column id="316" parent="286" name="categoryID">
       <Position>1</Position>
-      <DataType>char(1)|0s</DataType>
+      <DataType>char(2)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="316" parent="286" name="name">
+    <column id="317" parent="286" name="name">
       <Position>2</Position>
       <DataType>varchar(20)|0s</DataType>
     </column>
-    <column id="317" parent="286" name="descr">
+    <column id="318" parent="286" name="descr">
       <Position>3</Position>
-      <DataType>varchar(20)|0s</DataType>
+      <DataType>varchar(50)|0s</DataType>
     </column>
-    <key id="318" parent="286" name="PRIMARY">
+    <key id="319" parent="286" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>categoryID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="319" parent="287" name="guardianID">
+    <column id="320" parent="287" name="guardianID">
       <Position>1</Position>
       <DataType>char(5)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="320" parent="287" name="fName">
+    <column id="321" parent="287" name="fName">
       <Position>2</Position>
       <DataType>varchar(20)|0s</DataType>
     </column>
-    <column id="321" parent="287" name="lName">
+    <column id="322" parent="287" name="lName">
       <Position>3</Position>
       <DataType>varchar(20)|0s</DataType>
     </column>
-    <column id="322" parent="287" name="phoneNumber">
+    <column id="323" parent="287" name="phoneNumber">
       <Position>4</Position>
       <DataType>varchar(14)|0s</DataType>
     </column>
-    <column id="323" parent="287" name="emailAddress">
+    <column id="324" parent="287" name="emailAddress">
       <Position>5</Position>
       <DataType>varchar(30)|0s</DataType>
     </column>
-    <key id="324" parent="287" name="PRIMARY">
+    <key id="325" parent="287" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>guardianID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="325" parent="288" name="participantID">
+    <column id="326" parent="288" name="participantID">
       <Position>1</Position>
       <DataType>char(5)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="326" parent="288" name="ndisID">
+    <column id="327" parent="288" name="ndisID">
       <Position>2</Position>
       <DataType>char(10)|0s</DataType>
     </column>
-    <column id="327" parent="288" name="dateOfBirth">
+    <column id="328" parent="288" name="dateOfBirth">
       <Position>3</Position>
       <DataType>date|0s</DataType>
     </column>
-    <column id="328" parent="288" name="fName">
+    <column id="329" parent="288" name="fName">
       <Position>4</Position>
       <DataType>varchar(20)|0s</DataType>
     </column>
-    <column id="329" parent="288" name="lName">
+    <column id="330" parent="288" name="lName">
       <Position>5</Position>
       <DataType>varchar(20)|0s</DataType>
     </column>
-    <column id="330" parent="288" name="contact">
+    <column id="331" parent="288" name="contact">
       <Position>6</Position>
       <DataType>varchar(30)|0s</DataType>
     </column>
-    <column id="331" parent="288" name="preferredSupport">
+    <column id="332" parent="288" name="preferredSupport">
       <Position>7</Position>
       <DataType>char(5)|0s</DataType>
     </column>
-    <index id="332" parent="288" name="preferredSupport">
+    <index id="333" parent="288" name="preferredSupport">
       <ColNames>preferredSupport</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="333" parent="288" name="PRIMARY">
+    <key id="334" parent="288" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>participantID</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="334" parent="288" name="participant_ibfk_1">
+    <foreign-key id="335" parent="288" name="participant_ibfk_1">
       <ColNames>preferredSupport</ColNames>
       <RefTableName>staff</RefTableName>
       <RefColNames>staffID</RefColNames>
     </foreign-key>
-    <column id="335" parent="289" name="relationship">
+    <column id="336" parent="289" name="relationship">
       <Position>1</Position>
-      <DataType>varchar(10)|0s</DataType>
+      <DataType>varchar(15)|0s</DataType>
     </column>
-    <column id="336" parent="289" name="participantID">
+    <column id="337" parent="289" name="participantID">
       <Position>2</Position>
       <DataType>char(5)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="337" parent="289" name="guardianID">
+    <column id="338" parent="289" name="guardianID">
       <Position>3</Position>
       <DataType>char(5)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="338" parent="289" name="guardianID">
+    <index id="339" parent="289" name="guardianID">
       <ColNames>guardianID</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="339" parent="289" name="PRIMARY">
+    <key id="340" parent="289" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>participantID
 guardianID</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="340" parent="289" name="relations_ibfk_1">
+    <foreign-key id="341" parent="289" name="relations_ibfk_1">
       <ColNames>participantID</ColNames>
       <RefTableName>participant</RefTableName>
       <RefColNames>participantID</RefColNames>
     </foreign-key>
-    <foreign-key id="341" parent="289" name="relations_ibfk_2">
+    <foreign-key id="342" parent="289" name="relations_ibfk_2">
       <ColNames>guardianID</ColNames>
       <RefTableName>guardian</RefTableName>
       <RefColNames>guardianID</RefColNames>
     </foreign-key>
-    <column id="342" parent="290" name="staffID">
+    <column id="343" parent="290" name="staffID">
       <Position>1</Position>
       <DataType>char(5)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="343" parent="290" name="fName">
+    <column id="344" parent="290" name="fName">
       <Position>2</Position>
       <DataType>varchar(20)|0s</DataType>
     </column>
-    <column id="344" parent="290" name="lName">
+    <column id="345" parent="290" name="lName">
       <Position>3</Position>
       <DataType>varchar(20)|0s</DataType>
     </column>
-    <column id="345" parent="290" name="title">
+    <column id="346" parent="290" name="title">
       <Position>4</Position>
       <DataType>varchar(3)|0s</DataType>
     </column>
-    <column id="346" parent="290" name="position">
+    <column id="347" parent="290" name="position">
       <Position>5</Position>
       <DataType>varchar(10)|0s</DataType>
     </column>
-    <column id="347" parent="290" name="phoneNumber">
+    <column id="348" parent="290" name="phoneNumber">
       <Position>6</Position>
       <DataType>varchar(14)|0s</DataType>
     </column>
-    <column id="348" parent="290" name="emailAddress">
+    <column id="349" parent="290" name="emailAddress">
       <Position>7</Position>
       <DataType>varchar(30)|0s</DataType>
     </column>
-    <key id="349" parent="290" name="PRIMARY">
+    <key id="350" parent="290" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>staffID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="350" parent="291" name="subID">
+    <column id="351" parent="291" name="subID">
       <Position>1</Position>
-      <DataType>char(1)|0s</DataType>
+      <DataType>char(2)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="351" parent="291" name="name">
+    <column id="352" parent="291" name="name">
       <Position>2</Position>
       <DataType>varchar(20)|0s</DataType>
     </column>
-    <column id="352" parent="291" name="descr">
+    <column id="353" parent="291" name="descr">
       <Position>3</Position>
-      <DataType>varchar(20)|0s</DataType>
+      <DataType>varchar(50)|0s</DataType>
     </column>
-    <column id="353" parent="291" name="categoryID">
+    <column id="354" parent="291" name="categoryID">
       <Position>4</Position>
-      <DataType>char(1)|0s</DataType>
+      <DataType>char(2)|0s</DataType>
     </column>
-    <index id="354" parent="291" name="categoryID">
+    <index id="355" parent="291" name="categoryID">
       <ColNames>categoryID</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="355" parent="291" name="PRIMARY">
+    <key id="356" parent="291" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>subID</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="356" parent="291" name="subcat_ibfk_1">
+    <foreign-key id="357" parent="291" name="subcat_ibfk_1">
       <ColNames>categoryID</ColNames>
       <RefTableName>category</RefTableName>
       <RefColNames>categoryID</RefColNames>
