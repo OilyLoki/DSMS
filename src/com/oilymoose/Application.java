@@ -5,23 +5,78 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 
 public class Application {
     // JSwing variables
     private JPanel mainPanel;
-    private JButton button1;
+    private JPanel splashPanel;
+    private JPanel contentPanel;
+    private JPanel titlePanel;
+    private JTextField usernameField;
+    private JTextField passwordField;
+    private JButton submitButton;
+    private JPanel loginPanel;
+    private JPanel innerContentPanel;
+    private JPanel staffPanel;
+    private JPanel participantPanel;
+    private JPanel informationPanel;
+    private JList list1;
     private JLabel label1;
     private JMenuBar menuBar;
 
     // Other variables
     public Database database;
+    public String ip;
+    public int port;
+    public String databaseName;
+    enum ApplicationCard {
+        SPLASH_CARD(0), CONTENT_CARD(1);
+        private final int value;
+        ApplicationCard(int value) { this.value = value; }
+        public int getValue() { return value; }
+    }
+    String[] cardNames = { "splashCard", "contentCard" };
 
     // Getters/Setters
     public JPanel getMainPanel() { return mainPanel; }
     public JMenuBar getMenuBar() { return menuBar; }
 
+
+
+    // Misc Functions
+    public void SetDatabaseLocation(String ip, int port, String name) {
+        this.ip = ip;
+        this.port = port;
+        this.databaseName = name;
+    }
+
+    public String Login(String username, String password) {
+        try {
+            database = new Database(ip, port, databaseName, username, password);
+        } catch (Exception e) {
+            return e.toString();
+        }
+        return null;
+    }
+
+    public void SubmitCredentials() {
+        String error = Login(usernameField.getText(), passwordField.getText());
+        if (error == null) {
+            JOptionPane.showMessageDialog(null, "Login Successful!");
+            SwitchCard(ApplicationCard.CONTENT_CARD);
+        } else {
+            JOptionPane.showMessageDialog(null, error);
+        }
+    }
+
+    public void SwitchCard (ApplicationCard card) {
+        CardLayout cl = (CardLayout) mainPanel.getLayout();
+        cl.show(mainPanel, cardNames[card.getValue()]);
+    }
+
+    public void LoadContentPanes() {
+
+    }
 
     public Application() {
         // Menu Bar Configuration
@@ -43,24 +98,11 @@ public class Application {
         menuBar.add(viewMenu);
         menuBar.add(userMenu);
 
-
         // Listeners
-        button1.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                ResultSet rs = database.queryDatabase("SELECT * FROM Staff");
-                try {
-                    String output = "";
-                    rs.next();
-                    for (int i = 1; i < rs.getMetaData().getColumnCount(); i++) {
-                        output += rs.getString(i) + ", ";
-                    }
-                    label1.setText(output);
-                } catch (SQLException throwable) {
-                    throwable.printStackTrace();
-                }
-            }
-        });
+        // Submit on the submit button or enter in the text fields
+        submitButton.addActionListener(e -> SubmitCredentials());
+        passwordField.addActionListener(e -> SubmitCredentials());
+        usernameField.addActionListener(e -> SubmitCredentials());
     }
 
 
