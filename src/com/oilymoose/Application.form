@@ -8,20 +8,20 @@
     <properties/>
     <border type="none"/>
     <children>
-      <component id="10913" class="javax.swing.JButton" binding="oilyMooseGoBrrrrrButton" default-binding="true">
+      <component id="10913" class="javax.swing.JButton" binding="button1">
         <constraints>
-          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="OilyMoose go brrrrr"/>
         </properties>
       </component>
-      <component id="19666" class="javax.swing.JButton" binding="button1" default-binding="true">
+      <component id="a317a" class="javax.swing.JLabel" binding="label1">
         <constraints>
-          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Button"/>
+          <text value="Label"/>
         </properties>
       </component>
     </children>

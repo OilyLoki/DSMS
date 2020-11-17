@@ -26,7 +26,6 @@ CREATE TABLE Staff
 CREATE TABLE Appointment
 (
     dateTime      DATETIME,
-    duration      SMALLINT,
     staffID       CHAR(5),
     participantID CHAR(5),
     PRIMARY KEY (dateTime, staffID, participantID),
@@ -75,10 +74,9 @@ CREATE TABLE Behaviour
     duration      SMALLINT,
     severity      TINYINT,
     location      VARCHAR(20),
-    staffID       CHAR(5),
     participantID CHAR(5),
-    categoryID    CHAR(2),
-    subID         CHAR(2),
+    categoryID    CHAR(1),
+    subID         CHAR(1),
     PRIMARY KEY (behaviourID),
     FOREIGN KEY (participantID) REFERENCES Participant (participantID),
     FOREIGN KEY (categoryID) REFERENCES Category (categoryID),
@@ -89,7 +87,7 @@ CREATE TABLE Category
 (
     categoryID CHAR(2),
     name       VARCHAR(20),
-    descr      VARCHAR(20),
+    descr      VARCHAR(50),
     PRIMARY KEY (categoryID)
 );
 
@@ -97,16 +95,8 @@ CREATE TABLE Subcat
 (
     subID      CHAR(2),
     name       VARCHAR(20),
-    descr      VARCHAR(20),
-    categoryID CHAR(2),
+    descr      VARCHAR(50),
+    categoryID CHAR(1),
     PRIMARY KEY (subID),
     FOREIGN KEY (categoryID) REFERENCES Category (categoryID)
-);
-
-CREATE TABLE Strategies
-(
-    descr      CHAR(50),
-    subID      CHAR(2),
-    PRIMARY KEY (descr, subID),
-    FOREIGN KEY (subID) REFERENCES Subcat (subID)
 );
