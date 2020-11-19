@@ -7,7 +7,7 @@ public class Database {
     String ip, name, user, password;
     int port;
 
-    public Database(String ip, int port, String name, String user, String password) {
+    public Database(String ip, int port, String name, String user, String password) throws SQLException {
         this.ip = ip;
         this.port = port;
         this.name = name;
@@ -17,12 +17,13 @@ public class Database {
     }
 
     // Attempts to connect to the database using the data defined in the constructor
-    public void Connect() {
+    public void Connect() throws SQLException {
         try {
             connection = DriverManager.getConnection("jdbc:mysql://" + ip + ":" + port + "/" + name, user, password);
         } catch (Exception e) {
             System.out.println("[Database] Database could not be created:");
             System.out.println(e);
+            throw e;
         }
     }
 
