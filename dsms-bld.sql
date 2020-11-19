@@ -1,7 +1,7 @@
 SET foreign_key_checks = 0;
 
 DROP TABLE Staff;
-DROP TABLE Appointment;
+-- DROP TABLE Appointment;
 DROP TABLE Participant;
 DROP TABLE Relations;
 DROP TABLE Guardian;
@@ -23,15 +23,17 @@ CREATE TABLE Staff
     PRIMARY KEY (staffID)
 );
 
-CREATE TABLE Appointment
-(
-    dateTime      DATETIME,
-    staffID       CHAR(5),
-    participantID CHAR(5),
-    PRIMARY KEY (dateTime, staffID, participantID),
-    FOREIGN KEY (staffID) REFERENCES Staff (staffID),
-    FOREIGN KEY (participantID) REFERENCES Participant (participantID)
-);
+-- APPOINTMENT TABLE has been removed temporarily, but has been left in case of future use
+
+-- CREATE TABLE Appointment
+-- (
+--    dateTime      DATETIME,
+--    staffID       CHAR(5),
+--    participantID CHAR(5),
+--    PRIMARY KEY (dateTime, staffID, participantID),
+--    FOREIGN KEY (staffID) REFERENCES Staff (staffID),
+--    FOREIGN KEY (participantID) REFERENCES Participant (participantID)
+-- );
 
 
 CREATE TABLE Participant
@@ -75,10 +77,12 @@ CREATE TABLE Behaviour
     severity      TINYINT,
     location      VARCHAR(20),
     participantID CHAR(5),
+    staffID       CHAR(5),
     categoryID    CHAR(1),
     subID         CHAR(1),
     PRIMARY KEY (behaviourID),
     FOREIGN KEY (participantID) REFERENCES Participant (participantID),
+    FOREIGN KEY (staffID) REFERENCES Staff (staffID),
     FOREIGN KEY (categoryID) REFERENCES Category (categoryID),
     FOREIGN KEY (subID) REFERENCES SubCat (subID)
 );
